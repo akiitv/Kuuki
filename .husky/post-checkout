@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+printf "Kuuki:\n" > /home/ja/github/current_branch.txt
+git branch --show-current >> /home/ja/github/current_branch.txt
