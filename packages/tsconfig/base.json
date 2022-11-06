@@ -3,7 +3,14 @@
   "extends": "@tsconfig/recommended/tsconfig.json",
   "display": "Default",
   "compilerOptions": {
-    "experimentalDecorators": true
+    "target": "ES2017",
+    "experimentalDecorators": true,
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "incremental": true
   },
   "exclude": ["node_modules"]
 }
