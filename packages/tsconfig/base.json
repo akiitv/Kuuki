@@ -10,7 +10,8 @@
     "emitDecoratorMetadata": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "incremental": true
+    "incremental": true,
+    "strictPropertyInitialization": false
   },
   "exclude": ["node_modules"]
 }
