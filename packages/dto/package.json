@@ -1,0 +1,17 @@
+{
+  "name": "dto",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "postinstall": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4",
+    "tsconfig": "workspace:*"
+  }
+}
