@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "postinstall": "husky install",
+    "postinstall:dto": "turbo run postinstall --filter=dto",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "dev:backend": "turbo run dev --filter=backend",
