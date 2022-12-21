@@ -1,0 +1,16 @@
+{
+  "name": "discord",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dto": "workspace:*"
+  },
+  "devDependencies": {
+    "tsconfig": "workspace:*",
+    "tsconfig-paths": "4.1.0",
+    "typescript": "^4.7.4"
+  }
+}
