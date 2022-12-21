@@ -1,4 +1,4 @@
-import { CleanedEnvAccessors } from "envalid";
+import { CleanedEnvAccessors } from 'envalid';
 
 export type envType = Readonly<Record<string, any> & CleanedEnvAccessors>;
 

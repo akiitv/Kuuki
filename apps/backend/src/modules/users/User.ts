@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
-import { Model } from './schema';
+import { Model } from '../../shared/mongo/schema';
 
 @Schema()
 export class User extends Model {

@@ -7,9 +7,10 @@
     "packages/*"
   ],
   "scripts": {
-    "postinstall": "husky install",
-    "postinstall:dto": "turbo run postinstall --filter=dto",
+    "postinstall": "husky install & pnpm run build:dto",
     "build": "turbo run build",
+    "build:backend": "turbo run build --filter=backend",
+    "build:dto": "turbo run build --filter=dto",
     "dev": "turbo run dev --parallel",
     "dev:backend": "turbo run dev --filter=backend",
     "lint": "turbo run lint",
