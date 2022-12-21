@@ -1,5 +1,5 @@
 import { HydratedDocument, Model } from 'mongoose';
-import { Model as SchemaModel } from 'src/schemas/schema';
+import { Model as SchemaModel } from 'src/shared/mongo/schema';
 
 export abstract class MongoRepository<M extends SchemaModel, D extends HydratedDocument<M>> {
   constructor(protected model: Model<D>) {}
