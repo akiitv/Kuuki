@@ -6,7 +6,7 @@ import { CreateUserDTO } from './dto/CreateUserDTO';
 export class UserService {
   constructor(private readonly usersRepository: UsersRepository) {}
 
-  async createUser(createUserDTO: CreateUserDTO): Promise<void> {
-    console.log(createUserDTO);
+  async createUser(createUserDTO: CreateUserDTO): Promise<CreateUserDTO> {
+    return await this.usersRepository.create(createUserDTO);
   }
 }
