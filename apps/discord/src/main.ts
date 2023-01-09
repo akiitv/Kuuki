@@ -1,29 +1,23 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
-import {
-  Client,
-  Collection,
-  Events,
-  GatewayIntentBits,
-  Interaction,
-} from 'discord.js';
+import { Client, Events, Interaction } from 'discord.js';
 import { discordConfig } from './config/discord.config';
-import { CommandResolver } from './commands/CommandResolver';
+import { commandResolver } from './infrastructure/commandResolver';
 import { handleSlashCommand } from './infrastructure/handleSlashCommand';
 
 const client = new Client({
-  intents: [GatewayIntentBits.Guilds],
-}) as Client<boolean> & { commands: Collection<unknown, unknown> };
+  intents: discordConfig.intents,
+});
 
 client.once(Events.ClientReady, async (client) => {
-  await client.application.commands.set(CommandResolver);
+  await client.application.commands.set(commandResolver);
 
   console.log(`Ready! Logged in as ${client.user.tag}`);
 });
 
 client.on(Events.InteractionCreate, async (interaction: Interaction) => {
   if (interaction.isCommand() || interaction.isContextMenuCommand()) {
-    await handleSlashCommand(client, CommandResolver, interaction);
+    await handleSlashCommand(client, commandResolver, interaction);
   }
 });
 

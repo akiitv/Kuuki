@@ -1,5 +1,6 @@
 import { cleanEnv, str } from 'envalid';
 import { Config, envType } from './config';
+import { GatewayIntentBits } from 'discord.js';
 
 class DiscordConfig extends Config {
   validateConfig(): envType {
@@ -9,4 +10,11 @@ class DiscordConfig extends Config {
   }
 }
 
-export const discordConfig = new DiscordConfig().validateConfig();
+const innerConfig = {
+  intents: [GatewayIntentBits.Guilds],
+};
+
+export const discordConfig = {
+  ...new DiscordConfig().validateConfig(),
+  ...innerConfig,
+} as any;
