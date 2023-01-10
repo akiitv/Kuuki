@@ -1,4 +1,4 @@
 export interface CreateUserDTO {
-  name: string;
+  username: string;
   discordId: string;
 }

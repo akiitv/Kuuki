@@ -8,7 +8,7 @@ export const Ping: ICommand = {
   run: async (client, interaction) => {
     const content = 'Pong!';
 
-    await interaction.followUp({
+    await interaction.reply({
       ephemeral: true,
       content,
     });

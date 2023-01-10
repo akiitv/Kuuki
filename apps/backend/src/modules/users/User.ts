@@ -8,7 +8,7 @@ export class User extends Model {
   discordId: string;
 
   @Prop()
-  name: string;
+  username: string;
 }
 
 export type UserDocument = HydratedDocument<User>;
