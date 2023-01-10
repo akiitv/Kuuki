@@ -4,6 +4,8 @@ import { Client, Events, Interaction } from 'discord.js';
 import { discordConfig } from './config/discord.config';
 import { commandResolver } from './infrastructure/commandResolver';
 import { handleSlashCommand } from './infrastructure/handleSlashCommand';
+import { UsersService } from './modules/users/usersService';
+import { UsersRepository } from './modules/users/usersRepository';
 
 const client = new Client({
   intents: discordConfig.intents,
@@ -17,7 +19,9 @@ client.once(Events.ClientReady, async (client) => {
 
 client.on(Events.InteractionCreate, async (interaction: Interaction) => {
   if (interaction.isCommand() || interaction.isContextMenuCommand()) {
-    await handleSlashCommand(client, commandResolver, interaction);
+    await handleSlashCommand(client, commandResolver, interaction, {
+      usersService: UsersService(UsersRepository()),
+    });
   }
 });
 

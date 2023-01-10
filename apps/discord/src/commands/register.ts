@@ -17,10 +17,27 @@ export const Register: ICommand = {
       required: true,
     },
   ],
-  run: async (client, interaction) => {
+  run: async (client, interaction, { usersService }) => {
     const username = interaction.options.data[0].value;
     if (!username) throw new EmptyUserValueError('Username was not provided');
 
-    interaction.reply({ ephemeral: true, content: username as string});
+    const responseData = await usersService.createAccount(
+      username as string,
+      interaction.user.id
+    );
+
+    if (!responseData) {
+      interaction.reply({
+        ephemeral: true,
+        content: `Sorry! There was an error on our side.`,
+      });
+
+      return;
+    }
+
+    interaction.reply({
+      ephemeral: true,
+      content: `You were successfully registered as ${responseData.username}!`,
+    });
   },
 };

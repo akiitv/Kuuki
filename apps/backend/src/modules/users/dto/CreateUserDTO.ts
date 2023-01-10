@@ -3,7 +3,7 @@ import { IsString } from 'class-validator';
 
 export class CreateUserDTO implements CUDTO {
   @IsString()
-  name: string;
+  username: string;
 
   @IsString()
   discordId: string;
