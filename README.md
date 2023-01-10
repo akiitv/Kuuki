@@ -10,6 +10,10 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager.
 ### Apps
 
 - `backend`: a [NestJS](https://nestjs.com/) app
+- `discord`: an app made using [discord.js](https://discord.js.org/)
+
+### Packages
+
 - `eslint-config-custom`: `eslint` configurations
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
